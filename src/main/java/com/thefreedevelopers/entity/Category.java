@@ -3,6 +3,7 @@ package com.thefreedevelopers.entity;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name="Category.findAll", query = "SELECT c FROM Category c")
 public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
