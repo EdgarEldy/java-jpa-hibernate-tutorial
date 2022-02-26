@@ -9,7 +9,7 @@ public class Category {
     @Column(name = "id", nullable = false)
     private int id;
     @Basic
-    @Column(name = "category_name", nullable = true, length = 50)
+    @Column(name = "category_name", nullable = true, length = 50, unique = true)
     private String categoryName;
 
     public int getId() {
