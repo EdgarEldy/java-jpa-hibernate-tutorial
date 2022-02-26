@@ -1,4 +1,4 @@
-package entity;
+package com.thefreedevelopers.entity;
 
 import javax.persistence.*;
 
