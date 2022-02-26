@@ -5,6 +5,9 @@ import com.thefreedevelopers.entity.Category;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * @author EDGARELDY
@@ -13,7 +16,7 @@ import javax.persistence.Persistence;
 public class CategoryDao {
 
     // Save a category
-    public void saveCategory(String categoryName){
+    public void saveCategory(String categoryName) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
@@ -30,5 +33,18 @@ public class CategoryDao {
         } finally {
             entityManagerFactory.close();
         }
+    }
+
+    // Show categories
+    public TypedQuery<Category> showCategories() {
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        TypedQuery<Category> categories = entityManager.createNamedQuery("Category.findAll", Category.class);
+        for (Category category : categories.getResultList()) {
+            System.out.println(category.getCategoryName());
+        }
+
+        return categories;
     }
 }
