@@ -34,6 +34,15 @@ public class Category {
         this.categoryName = categoryName;
     }
 
+    // Generate getters and setters for products
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
