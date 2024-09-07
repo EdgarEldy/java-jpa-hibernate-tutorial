@@ -1,9 +1,10 @@
 package com.thefreedevelopers.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@NamedQuery(name="Category.findAll", query = "SELECT c FROM Category c")
+@NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
 public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,6 +13,10 @@ public class Category {
     @Basic
     @Column(name = "category_name", nullable = true, length = 50, unique = true)
     private String categoryName;
+
+    // Define a one-to-many relationship to Product
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products;
 
     public int getId() {
         return id;
