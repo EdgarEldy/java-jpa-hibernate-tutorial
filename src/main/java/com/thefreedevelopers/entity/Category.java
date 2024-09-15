@@ -57,6 +57,15 @@ public class Category {
         return true;
     }
 
+    /**
+     * Generates a hash code for the Category object based on its fields.
+     * The hash code is computed using the id and the categoryName fields.
+     * A prime number (31) is used to combine the values of these fields,
+     * ensuring a well-distributed hash code for the object.
+     *
+     * @return an integer representing the hash code of this Category object.
+     * If the categoryName is null, its contribution to the hash code is 0.
+     */
     @Override
     public int hashCode() {
         int result = id;
