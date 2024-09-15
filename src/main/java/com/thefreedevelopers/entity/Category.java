@@ -63,4 +63,19 @@ public class Category {
         result = 31 * result + (categoryName != null ? categoryName.hashCode() : 0);
         return result;
     }
+
+    /**
+     * Returns a string representation of the Category object.
+     * The string includes the id and categoryName fields.
+     *
+     * @return a string in the format:
+     * "Category{id=<id>, categoryName='<categoryName>'}"
+     */
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
 }
