@@ -5,6 +5,7 @@
              version="2.2">
     <persistence-unit name="default">
         <class>com.thefreedevelopers.entity.Category</class>
+        <class>com.thefreedevelopers.entity.Product</class>
         <properties>
             <property name="" value=""/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernate_db"/>
