@@ -17,6 +17,9 @@ public class Product {
     @Column(name = "product_name", nullable = true, length = 100)
     private String productName;
 
+    @Column(name = "unit_price")
+    private Double unitPrice;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +42,13 @@ public class Product {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }
