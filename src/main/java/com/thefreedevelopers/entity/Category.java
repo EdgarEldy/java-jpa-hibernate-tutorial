@@ -43,6 +43,17 @@ public class Category {
         this.products = products;
     }
 
+    /**
+     * Compares this Category object to another object to determine equality.
+     * Two Category objects are considered equal if:
+     * 1. They are the same instance (reference comparison).
+     * 2. They are of the same class (Category).
+     * 3. Their id fields are equal.
+     * 4. Their categoryName fields are both null or have the same value.
+     *
+     * @param o the object to compare this Category against.
+     * @return true if the objects are equal according to the above conditions, false otherwise.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
